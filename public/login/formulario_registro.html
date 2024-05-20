@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario con Javascript</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../../css/registro.css">
+    <script src="https://kit.fontawesome.com/381592b739.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="main__form">
+        <video autoplay muted loop id="background-video">
+            <source src="../../img/video_demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        <form id="formulario" action="../../includes/estudiante/procesar_formulario_estudiante.php" method="post" class="formulario">
+            <h2 class="formulario__grupo-titulo">Registrate</h2>
+            <!-- Grupo nombre -->
+            <div class="formulario__grupo" id="formulario__grupo-nombre">
+                <label for="nombre" class="formulario__label">Nombre:</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" id="nombre" name="nombre" class="formulario__input">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>          
+                </div>
+                <p class="formulario__input-error">Caracteres incorrectos para el nombre</p>
+            </div>
+    
+            <!-- Grupo apellido -->
+            <div class="formulario__grupo" id="formulario__grupo-apellido">
+                <label for="apellido" class="formulario__label">Apellido:</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" id="apellido" name="apellido" class="formulario__input">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error">Caracteres incorrectos para el apellido</p>
+                <p class="formulario__input-error-duplicado">Este correo ya esta registrado</p>
+            </div>
+    
+            <!-- Grupo edad -->
+            <div class="formulario__grupo" id="formulario__grupo-edad">
+                <label for="edad" class="formulario__label">Edad:</label>
+                <div class="formulario__grupo-input">
+                    <input type="number" id="edad" name="edad" class="formulario__input">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error">Debes tener al menos 7 años para registrate</p>
+            </div>
+    
+            <!-- Grupo correo -->
+            <div class="formulario__grupo" id="formulario__grupo-correo">
+                <label for="correo" class="formulario__label">Correo Electrónico:</label>
+                <div class="formulario__grupo-input">
+                    <input type="email" id="correo" name="correo" class="formulario__input">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error">Correo incorrecto</p>
+            </div>
+    
+            <!-- Grupo contraseña -->
+            <div class="formulario__grupo" id="formulario__grupo-contrasena">
+                <label for="contrasena" class="formulario__label">Contraseña:</label>
+                <div class="formulario__grupo-input">
+                    <input type="password" id="contrasena" name="contrasena" class="formulario__input">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error">La contraseña debe tener ...</p>
+            </div>
+    
+            <!-- Grupo repetir contraseña -->
+            <div class="formulario__grupo" id="formulario__grupo-contrasena2">
+                <label for="contrasena2" class="formulario__label">Repetir Contraseña:</label>
+                <div class="formulario__grupo-input">
+                    <input type="password" id="contrasena2" name="contrasena2" class="formulario__input">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error">Las contraseñas no coinciden</p>
+            </div>
+    
+            <!-- Grupo términos y condiciones -->
+            <div class="formulario__grupo formulario__grupo-terminos" id="formulario__grupo-terminos">
+                <input type="checkbox" id="terminos" name="terminos" class="formulario__input">
+                <label for="terminos" class="formulario__label">Acepto los <a href=""> <b>términos y condiciones</b></a></label>
+            </div>
+    
+    
+            <!-- grupo error -->
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Error</b> Por favor llene todos los campos para continuar con el registro</p>
+    
+            </div>
+                <!-- Grupo boton -->
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <input type="submit" value="Enviar" id="enviar" class="formulario__btn">
+                <p class="formulario__mensaje-exitoso" id="formulario__mensaje-exitoso"></p>
+            </div>
+    
+            <div class="formulario_grupo-redireccion">
+                <a  href="formulario_logeo.html">¿Ya tienes una cuenta?</a>
+    
+            </div>
+    
+    
+            </div>
+        </form>
+    </section>
+    
+
+    
+
+    <script src="../../js/estudiante/validaciones_registro.js"></script>
+</body>
+</html>
