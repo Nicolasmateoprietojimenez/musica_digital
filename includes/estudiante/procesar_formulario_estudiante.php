@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (insertarEstudiante($conexion, $correo, $contrasena_hash, $nombre1, $nombre2, $apellido1, $apellido2, $estado, $nombreUsuario, $avatar, $edad)) {
                 $id_estudiante = $conexion->insert_id;
                 
-                if (verificarPin($conexion, $id_estudiante, $pin)) {
+                if (crearPin($conexion, $id_estudiante, $pin)) {
                     if (enviarCorreoBienvenida($nombre1, $apellido1, $correo, $pin)) {
                         echo "<script>alert('¡Solo un paso más! Activa tu cuenta con el mensaje que enviamos a tu correo.');</script>";
                         echo "<script>window.location.replace('../../public/login/formulario_registro.html');</script>";

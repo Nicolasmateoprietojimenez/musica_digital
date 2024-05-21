@@ -21,11 +21,11 @@ function enviarCorreoBienvenida($nombre, $apellido, $correo, $pin) {
 
     try {
     
-        $mail->setFrom('nicompj@gmail.com', 'Sonáre');
+        $mail->setFrom('nicompj@gmail.com');
         $mail->addAddress($correo);
         $mail->CharSet = 'UTF-8';
         $mail->isHTML(true);
-        $mail->Subject = '¡Bienvenido a Sonáre!';
+        $mail->Subject = '¡Bienvenido!';
         $mail->Body = "
             <html>
             <head>
@@ -40,18 +40,18 @@ function enviarCorreoBienvenida($nombre, $apellido, $correo, $pin) {
             </head>
             <body>
                 <div class='container'>
-                    <h1>¡Bienvenido a Sonáre!</h1>
+                    <h1>¡Bienvenido!</h1>
                     <p>Hola $nombre $apellido,</p>
-                    <p>Te damos la bienvenida a Sonáre, la plataforma de aprendizaje musical y digital.</p>
+                    <p>Te damos la bienvenida, la plataforma de aprendizaje musical y digital.</p>
                     <p>Para activar tu cuenta, por favor ingresa el siguiente PIN en el siguiente enlace:</p>
                     <p class='pin'>$pin</p>
                     <p><a href='http://localhost/musica_digital/other/activar_cuenta.html'>Ingresa aquí</a></p>
-                    <p>¡Esperamos verte pronto en Sonáre!</p>
+                    <p>¡Esperamos verte pronto!</p>
                 </div>
             </body>
             </html>
         ";
-        $mail->AltBody = "¡Bienvenido a Sonáre! Hola $nombre $apellido, te damos la bienvenida a Sonáre, la plataforma de aprendizaje musical y digital. Para activar tu cuenta, por favor ingresa el siguiente PIN: $pin. ¡Esperamos verte pronto en Sonáre!";
+        $mail->AltBody = "¡Bienvenido! Hola $nombre $apellido, te damos la bienvenida, la plataforma de aprendizaje musical y digital. Para activar tu cuenta, por favor ingresa el siguiente PIN: $pin. ¡Esperamos verte pronto!";
 
         $mail->send();
         return 'El mensaje se envió correctamente.';

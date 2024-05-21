@@ -1,13 +1,8 @@
 @font-face {
-    font-family: 'holidays';
-    src: url('../fonts/Welcome\ Magic.ttf');
+    font-family: 'mustica';
+    src: url('../fonts/the_bold_font/MusticaPro-SemiBold.otf');
 }
 
-
-@font-face {
-    font-family: 'kindergarten';
-    src: url('../fonts/long_today/Long\ Today.ttf');
-}
 *{
     box-sizing: border-box;
 }
@@ -54,7 +49,7 @@
     display: block;
     padding: 10px;
     cursor: pointer;
-    font-family: kindergarten;
+    font-family: mustica;
     font-size: 1.5rem;
 }
 .formulario__input{
@@ -65,7 +60,7 @@
     height: 5vh;
 }
 .formulario__input:focus{
-    border: 3px solid rgb(0, 89, 255);
+    border: 3px solid #F07012;
     outline: none;
     box-shadow: 1px 0px 30px rgba(76, 76, 76, 0.36);
 }
@@ -130,7 +125,7 @@ margin: 0;
     border-radius: 10px;
     color:rgb(237, 228, 228); 
     font-size: 2rem;
-    font-family: holidays;
+    font-family: mustica;
     transition: transform 0.3s ease-in-out;
 }
 .formulario__btn:hover{
@@ -167,7 +162,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 .formulario__grupo-titulo{
-    font-family: holidays  ;
+    font-family: mustica  ;
     margin: auto;
     font-size: 5rem;
     margin-top:2rem;
@@ -217,14 +212,14 @@ input[type="number"]::-webkit-outer-spin-button {
 .formulario__grupo-terminos a {
     color: #F07012;
     text-decoration: none;
-    font-family: kindergarten;
+    font-family: mustica;
     border-bottom: 3px solid #F07012;
 }
 .formulario_grupo-redireccion a {
     color: #101010;
     text-decoration: none;
     font-size: 1.8rem;
-    font-family: kindergarten ;
+    font-family: mustica ;
   }
   
 

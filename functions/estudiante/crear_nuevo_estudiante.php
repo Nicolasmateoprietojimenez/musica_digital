@@ -23,6 +23,28 @@ function insertarEstudiante($conexion, $correo, $contrasena, $nombre1, $nombre2,
     }
 }
 
+function crearPin($conexion, $id_estudiante, $pin) {
+    try {
+        $consulta = "INSERT INTO pin_verificacion (pin, id_estudiante) VALUES (?, ?)";
+        
+        $stmt = $conexion->prepare($consulta);
+        
+        if (!$stmt) {
+            throw new Exception("Error al preparar la consulta: " . $conexion->error);
+        }
+        
+        $stmt->bind_param("ii", $pin, $id_estudiante);
+        
+        if (!$stmt->execute()) {
+            throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+        }
+        
+        return true;
+    } catch (Exception $e) {
+        echo "<script>alert('Error al insertar PIN de verificación: " . $e->getMessage() . "');</script>";
+        return false;
+    }
+}
 
 function verificarPin($conexion, $id_estudiante, $pin) {
     try {
